@@ -5,20 +5,21 @@ import profile from '@/public/profile.jpg';
 import { Tabs, Tab, Card, CardBody } from '@nextui-org/react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
 
 export default function Home() {
     return (
         <main>
-            <section className="py-20">
-                <h2 className="sr-only">introduce</h2>
-                <div>
-                    <p className="flex flex-col">
-                        <span className="font-mono">안녕하세요, 제 이름은</span>
+            <section className="py-44">
+                <h2 className="sr-only">간단 소개</h2>
+                <div className="">
+                    <p className="flex flex-col gap-4">
+                        <span className="text-2xl">안녕하세요, 제 이름은</span>
                         <em className="text-5xl font-bold not-italic">문희</em>
                         <em className="text-5xl font-bold not-italic text-foreground/50">
                             입니다. 저는 웹 프론트엔드 개발자입니다.
                         </em>
-                        <span className="">
+                        <span className="text-2xl">
                             저는 Form 컨트롤에 특화된 프론트엔드 엔지니어입니다.
                             현재는 B-square Lab에서 자격증 및 수료증을 NFT로
                             저장하는 'NFT 인증서' 서비스의 웹 & 웹뷰를 담당하고
@@ -28,51 +29,62 @@ export default function Home() {
                 </div>
             </section>
             <section>
-                <div>
-                    <h2 className="" id="about">
-                        01. About Me
+                <div className="flex flex-col gap-4">
+                    <h2 className="relative text-2xl" id="about">
+                        <span className="relative z-10 bg-primary px-2 py-1 text-primary-foreground">
+                            01. About Me
+                        </span>
+                        <Separator className="absolute left-0 top-1/2 -translate-y-1/2" />
                     </h2>
-                    <div>
-                        <p>
-                            안녕하세요. 제 이름은 문희이고, 저는 살아 있는
-                            화면을 만드는 작업을 좋아합니다. 웹 개발에 대한
-                            관심은 지난 2022년부터 시작되었습니다. 막연하게 IT
-                            기업 입사를 꿈꾸며 수강한 프론트엔드 수업에서 HTML &
-                            CSS로 직접 화면을 구현하고 JavaScript로 UI 로직을
-                            만드는 일에 흥미를 가지게 되었습니다.
-                        </p>
-                        <p>
-                            ReactJS를 중점으로 한 프론트엔드 교육 수료 후,
-                            OAuth를 이용한 소셜 로그인 기능을 직접 만들고 싶어
-                            Express로 서버 API를 만들고 MongoDB와 AWS S3를
-                            사용한 채식 지도 애플리케이션을 배포하기도 했습니다.
-                            DB & Storage & 컨테이너 기반 PaaS 서비스를 사용한
-                            Backend 배포를 통해 백엔드 - 프론트엔드 통신에 대해
-                            전반적으로 이해할 수 있게 되었습니다!
-                        </p>
-                        <p>
-                            2023년 7월부터 한 블록체인 회사의 프론트엔드
-                            개발자로 일을 시작했습니다. 요즘 저의 관심사는{' '}
-                            <em>테이블 UI의 편의성 개선</em>입니다. 테이블
-                            헤더에서 필터링과 정렬 기능을 사용자가 편리하게
-                            사용할 수 있도록 고민하고 있습니다.
-                        </p>
-                        <p>
-                            최근에 제가 사용해본 몇 가지 기술은 다음과 같습니다:
-                        </p>
-                        <div>
-                            <ul>
-                                <li>JavaScript (ES6+)</li>
-                                <li>TypeScript</li>
-                                <li>React</li>
-                                <li>Node.js</li>
-                                <li>MongoDB</li>
-                                <li>AWS S3</li>
-                            </ul>
+                    <div className="flex gap-4">
+                        <div className="space-y-2 break-keep text-xl">
+                            <p>
+                                안녕하세요. 제 이름은 문희이고, 저는 살아 있는
+                                화면을 만드는 작업을 좋아합니다. 웹 개발에 대한
+                                관심은 지난 2022년부터 시작되었습니다. 막연하게
+                                IT 기업 입사를 꿈꾸며 수강한 프론트엔드 수업에서
+                                HTML & CSS로 직접 화면을 구현하고 JavaScript로
+                                UI 로직을 만드는 일에 흥미를 가지게 되었습니다.
+                            </p>
+                            <p>
+                                ReactJS를 중점으로 한 프론트엔드 교육 수료 후,
+                                OAuth를 이용한 소셜 로그인 기능을 직접 만들고
+                                싶어{' '}
+                                <em className="bg-secondary not-italic text-secondary-foreground">
+                                    Express로 서버 API를 만들고 MongoDB와 AWS
+                                    S3를 사용한 채식 지도 애플리케이션을
+                                    배포하기도 했습니다. DB & Storage & 컨테이너
+                                    기반 PaaS 서비스를 사용한 Backend 배포를
+                                    통해 백엔드 - 프론트엔드 통신에 대해
+                                    전반적으로 이해
+                                </em>
+                                할 수 있게 되었습니다!
+                            </p>
+                            <p>
+                                2023년 7월부터 한 블록체인 회사의 프론트엔드
+                                개발자로 일을 시작했습니다. 요즘 저의 관심사는{' '}
+                                <em>테이블 UI의 편의성 개선</em>입니다. 테이블
+                                헤더에서 필터링과 정렬 기능을 사용자가 편리하게
+                                사용할 수 있도록 고민하고 있습니다.
+                            </p>
+                            <p>
+                                최근에 제가 사용해본 몇 가지 기술은 다음과
+                                같습니다:
+                            </p>
+                            <div>
+                                <ul>
+                                    <li>JavaScript (ES6+)</li>
+                                    <li>TypeScript</li>
+                                    <li>React</li>
+                                    <li>Node.js</li>
+                                    <li>MongoDB</li>
+                                    <li>AWS S3</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <Image src={profile} alt="Moon Hee" width={500} />
+                        <div className="shrink-0 basis-80">
+                            <Image src={profile} alt="Moon Hee" width={500} />
+                        </div>
                     </div>
                 </div>
             </section>

@@ -93,16 +93,28 @@ const config = {
                     colors: {
                         background: 'hsl(290 62% 100%)',
                         foreground: 'hsl(290 80% 5%)',
-                        primary: 'hsl(290 62% 12%)',
-                        secondary: 'hsl(290 13% 92%)',
+                        primary: {
+                            DEFAULT: 'hsl(290 62% 12%)',
+                            foreground: 'hsl(290 62% 72%)',
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(290 13% 92%)',
+                            foreground: 'hsl(290 13% 32%)',
+                        },
                     },
                 },
                 dark: {
                     colors: {
                         background: 'hsl(290 44% 2%)',
                         foreground: 'hsl(290 26% 100%)',
-                        primary: 'hsl(290 62% 12%)',
-                        secondary: 'hsl(290 2% 18%)',
+                        primary: {
+                            DEFAULT: 'hsl(290 62% 12%)',
+                            foreground: 'hsl(290 62% 72%)',
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(290 2% 18%)',
+                            foreground: 'hsl(290 2% 78%)',
+                        },
                     },
                 },
             },
