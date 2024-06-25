@@ -6,10 +6,39 @@ import { Tabs, Tab, Card, CardBody } from '@nextui-org/react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
+import StyledTitle from '@/components/StyledTitle';
+import StyledListItem from '@/components/StyledListItem';
+
+const skills = [
+    {
+        src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
+        content: 'JavaScript (ES6+)',
+    },
+    {
+        src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg',
+        content: 'TypeScript',
+    },
+    {
+        src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+        content: 'React',
+    },
+    {
+        src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg',
+        content: 'Node.js',
+    },
+    {
+        src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg',
+        content: 'MongoDB',
+    },
+    {
+        src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg',
+        content: 'AWS S3',
+    },
+];
 
 export default function Home() {
     return (
-        <main>
+        <main className="flex flex-col gap-48">
             <section className="py-44">
                 <h2 className="sr-only">간단 소개</h2>
                 <div className="">
@@ -29,15 +58,10 @@ export default function Home() {
                 </div>
             </section>
             <section>
-                <div className="flex flex-col gap-4">
-                    <h2 className="relative text-2xl" id="about">
-                        <span className="relative z-10 bg-primary px-2 py-1 text-primary-foreground">
-                            01. About Me
-                        </span>
-                        <Separator className="absolute left-0 top-1/2 -translate-y-1/2" />
-                    </h2>
-                    <div className="flex gap-4">
-                        <div className="space-y-2 break-keep text-xl">
+                <div className="flex flex-col gap-12">
+                    <StyledTitle id="about" title="01. About Me" />
+                    <div className="flex gap-8">
+                        <div className="space-y-4 break-keep text-xl leading-8">
                             <p>
                                 안녕하세요. 제 이름은 문희이고, 저는 살아 있는
                                 화면을 만드는 작업을 좋아합니다. 웹 개발에 대한
@@ -50,7 +74,7 @@ export default function Home() {
                                 ReactJS를 중점으로 한 프론트엔드 교육 수료 후,
                                 OAuth를 이용한 소셜 로그인 기능을 직접 만들고
                                 싶어{' '}
-                                <em className="bg-secondary not-italic text-secondary-foreground">
+                                <em className="bg-primary not-italic text-primary-foreground">
                                     Express로 서버 API를 만들고 MongoDB와 AWS
                                     S3를 사용한 채식 지도 애플리케이션을
                                     배포하기도 했습니다. DB & Storage & 컨테이너
@@ -72,13 +96,14 @@ export default function Home() {
                                 같습니다:
                             </p>
                             <div>
-                                <ul>
-                                    <li>JavaScript (ES6+)</li>
-                                    <li>TypeScript</li>
-                                    <li>React</li>
-                                    <li>Node.js</li>
-                                    <li>MongoDB</li>
-                                    <li>AWS S3</li>
+                                <ul className="grid grid-cols-3 gap-4">
+                                    {skills.map((skill, index) => (
+                                        <StyledListItem
+                                            key={index}
+                                            src={skill.src}
+                                            content={skill.content}
+                                        />
+                                    ))}
                                 </ul>
                             </div>
                         </div>
@@ -90,9 +115,10 @@ export default function Home() {
             </section>
             <section>
                 <div>
-                    <h2 className="" id="experience">
-                        02. Where I've Worked
-                    </h2>
+                    <StyledTitle
+                        id="experience"
+                        title="02. Where I've Worked"
+                    />
                     <div>
                         <Tabs aria-label="Options">
                             <Tab key="bSquareLab" title="B-square Lab">
@@ -545,9 +571,7 @@ export default function Home() {
             </section>
             <section>
                 <div>
-                    <h2 className="" id="work">
-                        03. Some Things I've Built
-                    </h2>
+                    <StyledTitle id="work" title="03. Some Things I've Built" />
                     <div>
                         <ul>
                             <li>
@@ -615,9 +639,7 @@ export default function Home() {
             </section>
             <section>
                 <div>
-                    <h2 className="" id="Contact">
-                        04. What's Next?
-                    </h2>
+                    <StyledTitle id="contact" title="04. What's Next?" />
                     <div>
                         <p>Get In Touch</p>
                         <p>
