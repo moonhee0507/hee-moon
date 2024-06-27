@@ -1,3 +1,5 @@
+// layout.tsx
+
 import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
@@ -6,6 +8,7 @@ import { Providers } from './providers';
 import StyledNavbar from '@/components/StyledNavbar';
 import StyledFooter from '@/components/StyledFooter';
 import localFont from 'next/font/local';
+import ThreeJsWrapper from '@/components/ThreeJsWrapper';
 
 export const metadata: Metadata = {
     title: 'Moon Hee',
@@ -24,16 +27,16 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className="dark">
-            <body
-                className={`${pretendard.className} ${GeistSans.variable} ${GeistMono.variable}`}
-            >
+        <html lang="en" className="light">
+            <body className={`${pretendard.className} ${GeistSans.variable} ${GeistMono.variable}`}>
                 <Providers>
-                    <div className="mx-auto my-0 max-w-[1000px]">
-                        <StyledNavbar />
-                        {children}
-                        <StyledFooter />
-                    </div>
+                    <ThreeJsWrapper>
+                        <div className="relative z-10 mx-auto my-0 max-w-[1000px]">
+                            <StyledNavbar />
+                            {children}
+                            <StyledFooter />
+                        </div>
+                    </ThreeJsWrapper>
                 </Providers>
             </body>
         </html>
