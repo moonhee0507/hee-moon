@@ -16,9 +16,11 @@ export default function StyledNavbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const navbarRef = useRef<HTMLElement>(null);
-    const prevScrollPosRef = useRef<number>(window.scrollY);
+    const prevScrollPosRef = useRef<number>(0);
 
     useEffect(() => {
+        prevScrollPosRef.current = window.scrollY;
+
         const handleScroll = () => {
             const currentScrollPos = window.scrollY;
 

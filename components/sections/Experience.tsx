@@ -136,8 +136,8 @@ const Experience = () => {
                                                                                         표시
                                                                                     </li>
                                                                                     <li>
-                                                                                        앱의 언어 정보를 전달하기 위해 window.postMessage 등 Window 객체와 'message' 이벤트를 통한
-                                                                                        RN - React.js 통신
+                                                                                        앱의 언어 정보를 전달하기 위해 window.postMessage 등 Window 객체와 &apos;message&apos;
+                                                                                        이벤트를 통한 RN - React.js 통신
                                                                                     </li>
                                                                                     <li>i18n을 통한 다국어 처리(en, ko)</li>
                                                                                     <li>TailwindCSS를 사용하여 Mobile first의 반응형 레이아웃 구현</li>
