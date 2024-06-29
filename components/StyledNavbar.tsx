@@ -41,7 +41,7 @@ export default function StyledNavbar() {
     }, []);
 
     return (
-        <header ref={navbarRef} className="py-4 font-mono fixed top-0 transition-[top_0.3s] w-full bg-background/90 z-10">
+        <header ref={navbarRef} className="py-4 font-mono fixed top-0 transition-[top_0.3s] w-full bg-primary/90 text-primary-foreground z-20">
             <div className="flex items-baseline justify-between max-w-[1000px] mx-auto my-0">
                 <HeeLogo />
                 <nav>
@@ -53,7 +53,7 @@ export default function StyledNavbar() {
                             return (
                                 <li key={name}>
                                     <Link href={href} className="">
-                                        <span className="mr-2 text-accent">{`${num}.`}</span>
+                                        <span className="mr-2 text-primary-foreground/50">{`${num}.`}</span>
                                         <span className="hover:underline">{name}</span>
                                     </Link>
                                 </li>

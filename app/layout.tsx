@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className="dark scroll-smooth">
-            <body className={`${pretendard.className} ${GeistSans.variable} ${GeistMono.variable} bg-starry bg-contain`}>
+            <body className={`${pretendard.className} ${GeistSans.variable} ${GeistMono.variable}`}>
                 <Providers>
                     <div className="flex flex-col justify-center w-full items-center">
                         <StyledNavbar />
