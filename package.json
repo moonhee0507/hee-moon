@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.3.0",
     "@nextui-org/react": "^2.4.2",
     "@nextui-org/system": "^2.2.2",
     "@nextui-org/tabs": "^2.0.32",
@@ -16,6 +17,7 @@
     "@radix-ui/react-navigation-menu": "^1.2.0",
     "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "@react-three/fiber": "^8.16.8",
     "@types/three": "^0.165.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",

@@ -1,15 +1,9 @@
-import type { Config } from 'tailwindcss';
 import { nextui } from '@nextui-org/react';
+import type { Config } from 'tailwindcss';
 
 const config = {
     darkMode: ['class'],
-    content: [
-        './pages/**/*.{ts,tsx}',
-        './components/**/*.{ts,tsx}',
-        './app/**/*.{ts,tsx}',
-        './src/**/*.{ts,tsx}',
-        './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
-    ],
+    content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './app/**/*.{ts,tsx}', './src/**/*.{ts,tsx}', './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'],
     prefix: '',
     theme: {
         container: {
@@ -80,8 +74,8 @@ const config = {
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                'gradient-conic':
-                    'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+                'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+                starry: 'url("/background.png")',
             },
         },
     },
@@ -91,29 +85,29 @@ const config = {
             themes: {
                 light: {
                     colors: {
-                        background: 'hsl(290 62% 100%)',
-                        foreground: 'hsl(290 80% 5%)',
+                        background: 'hsl(215 54% 99%)',
+                        foreground: 'hsl(215 60% 0%)',
                         primary: {
-                            DEFAULT: 'hsl(290 62% 12%)',
-                            foreground: 'hsl(290 62% 72%)',
+                            DEFAULT: 'hsl(215 66% 30%)',
+                            foreground: 'hsl(215 66% 90%)',
                         },
                         secondary: {
-                            DEFAULT: 'hsl(290 13% 92%)',
-                            foreground: 'hsl(290 13% 32%)',
+                            DEFAULT: 'hsl(215 8% 83%)',
+                            foreground: 'hsl(215 8% 23%)',
                         },
                     },
                 },
                 dark: {
                     colors: {
-                        background: 'hsl(290 44% 2%)',
-                        foreground: 'hsl(290 26% 100%)',
+                        background: 'hsl(215 57% 0%)',
+                        foreground: 'hsl(215 35% 100%)',
                         primary: {
-                            DEFAULT: 'hsl(290 62% 12%)',
-                            foreground: 'hsl(290 62% 72%)',
+                            DEFAULT: 'hsl(215 66% 30%)',
+                            foreground: 'hsl(215 66% 90%)',
                         },
                         secondary: {
-                            DEFAULT: 'hsl(290 2% 18%)',
-                            foreground: 'hsl(290 2% 78%)',
+                            DEFAULT: 'hsl(215 4% 10%)',
+                            foreground: 'hsl(215 4% 70%)',
                         },
                     },
                 },
