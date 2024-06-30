@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 
 import './globals.css';
 
+import RootButtonGroup from '@/components/RootButtonGroup';
 import StyledFooter from '@/components/StyledFooter';
 import StyledNavbar from '@/components/StyledNavbar';
 import localFont from 'next/font/local';
@@ -27,13 +28,14 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className="dark scroll-smooth">
+        <html lang="en" className="light scroll-smooth">
             <body className={`${pretendard.className} ${GeistSans.variable} ${GeistMono.variable}`}>
                 <Providers>
                     <div className="flex flex-col justify-center w-full items-center">
                         <StyledNavbar />
                         {children}
                         <StyledFooter />
+                        <RootButtonGroup />
                     </div>
                 </Providers>
             </body>
