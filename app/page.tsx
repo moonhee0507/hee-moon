@@ -6,7 +6,7 @@ import Work from '@/components/sections/Work';
 
 export default function Home() {
     return (
-        <main className="flex flex-col gap-48 max-w-[1000px] px-8 ">
+        <main className="flex flex-col gap-48 max-w-[1000px] px-8">
             <Intro />
             <AboutMe />
             <Experience />

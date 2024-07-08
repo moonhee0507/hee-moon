@@ -1,6 +1,6 @@
 'use client';
 
-import { Card, CardBody, CardHeader, Image, Tab, Tabs } from '@nextui-org/react';
+import { Card, CardBody, Tab, Tabs } from '@nextui-org/react';
 
 import StyledTitle from '../StyledTitle';
 
@@ -10,7 +10,7 @@ const Experience = () => {
             <div className="flex flex-col gap-12">
                 <StyledTitle id="experience" title="02. Where I've Worked" />
                 <div>
-                    <Tabs aria-label="Where I've worked" size="lg" color="primary" variant="light" placement="start" disabledKeys={['thereIsNotASecondCompany']}>
+                    <Tabs aria-label="Where I've worked" size="lg" color="primary" variant="light" placement="top" disabledKeys={['thereIsNotASecondCompany']}>
                         <Tab key="bSquareLab" title="B-square Lab">
                             <Card className="p-4" isBlurred>
                                 <CardBody>

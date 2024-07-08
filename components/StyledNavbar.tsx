@@ -58,7 +58,7 @@ export default function StyledNavbar() {
 }
 
 const NavigationView = () => {
-    const isMedium = useMedia('(min-width: 768px)');
+    const isMedium = useMedia('(min-width: 768px)', true);
 
     if (isMedium) {
         return <NavigationMenu direction="row" />;

@@ -28,7 +28,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className="light scroll-smooth">
+        <html lang="en" className="dark">
             <body className={`${pretendard.className} ${GeistSans.variable} ${GeistMono.variable}`}>
                 <Providers>
                     <div className="flex flex-col justify-center w-full items-center">

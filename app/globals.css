@@ -49,6 +49,10 @@
     }
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     letter-spacing: -0.03rem;
     background: linear-gradient(-45deg, rgba(238, 119, 82, 0.6), rgba(231, 60, 126, 0.7), rgba(109, 35, 213, 0.8), rgba(35, 213, 171, 0.9));

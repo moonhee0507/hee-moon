@@ -14,7 +14,7 @@ const Work = () => {
                 <StyledTitle id="work" title="03. Some Things I've Built" />
                 <div>
                     <ul>
-                        <li className="flex gap-4">
+                        <li className="flex gap-4 flex-col-reverse lg:flex-row">
                             <div className="space-y-4">
                                 <div>
                                     <p>개인 프로젝트</p>

@@ -7,7 +7,7 @@ import StyledTitle from '../StyledTitle';
 const skills = [
     {
         src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
-        content: 'JavaScript (ES6+)',
+        content: 'JavaScript',
     },
     {
         src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg',
@@ -36,7 +36,7 @@ const AboutMe = () => {
         <section>
             <div className="flex flex-col gap-12">
                 <StyledTitle id="about" title="01. About Me" />
-                <div className="flex gap-8">
+                <div className="flex gap-8 flex-col-reverse lg:flex-row">
                     <div className="space-y-4 break-keep text-xl leading-8">
                         <p>
                             안녕하세요. 제 이름은 문희이고, 저는 살아 있는 화면을 만드는 작업을 좋아합니다. 웹 개발에 대한 관심은 지난 2022년부터 시작되었습니다. 막연하게 IT 기업
@@ -56,14 +56,14 @@ const AboutMe = () => {
                         </p>
                         <p>최근에 제가 사용해본 몇 가지 기술은 다음과 같습니다:</p>
                         <div>
-                            <ul className="grid grid-cols-3 gap-4">
+                            <ul className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                 {skills.map((skill, index) => (
                                     <StyledListItem key={index} src={skill.src} content={skill.content} />
                                 ))}
                             </ul>
                         </div>
                     </div>
-                    <div className="shrink-0 basis-80">
+                    <div className="shrink-0 basis-80 self-center">
                         <NextImage src={profile} alt="Moon Hee" width={500} />
                     </div>
                 </div>
