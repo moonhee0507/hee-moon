@@ -67,7 +67,7 @@ const NavigationView = () => {
     return (
         <Drawer.Root direction="right">
             <Drawer.Trigger asChild>
-                <Button type="button" variant="ghost" className="h-8 border-none">
+                <Button type="button" variant="ghost" className="h-8 border-none p-0">
                     <Menu size={20} />
                 </Button>
             </Drawer.Trigger>
