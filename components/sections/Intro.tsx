@@ -1,8 +1,8 @@
 const Intro = () => {
     return (
-        <section className="py-44 text-slate-900">
-            <h2 className="sr-only">간단 소개</h2>
-            <div className="">
+        <section className="h-svh">
+            <h2 className="sr-only">자기 소개</h2>
+            <div className="w-full h-full flex items-center">
                 <p className="flex flex-col gap-4">
                     <span className="text-2xl">
                         안녕하세요, 제 이름은
