@@ -84,29 +84,29 @@ const config = {
             themes: {
                 light: {
                     colors: {
-                        background: 'hsl(0 0% 100%)',
-                        foreground: 'hsl(224 71.4% 4.1%)',
+                        background: 'hsl(243 67% 99%)',
+                        foreground: 'hsl(243 75% 3%)',
                         primary: {
-                            DEFAULT: 'hsl(220.9 39.3% 11%)',
-                            foreground: 'hsl(210 20% 98%)',
+                            DEFAULT: 'hsl(243 85% 44%)',
+                            foreground: 'hsl(0 0% 100%)',
                         },
                         secondary: {
-                            DEFAULT: 'hsl(220 14.3% 95.9%)',
-                            foreground: 'hsl(220.9 39.3% 11%)',
+                            DEFAULT: 'hsl(213 85% 44%)',
+                            foreground: 'hsl(0 0% 100%)',
                         },
                     },
                 },
                 dark: {
                     colors: {
-                        background: 'hsl(224 71.4% 4.1%)',
-                        foreground: 'hsl(210 20% 98%)',
+                        background: 'hsl(243 55% 3%)',
+                        foreground: 'hsl(243 12% 99%)',
                         primary: {
-                            DEFAULT: 'hsl(210 20% 98%)',
-                            foreground: 'hsl(220.9 39.3% 11%)',
+                            DEFAULT: 'hsl(243 85% 44%)',
+                            foreground: 'hsl(0 0% 100%)',
                         },
                         secondary: {
-                            DEFAULT: 'hsl(215 27.9% 16.9%)',
-                            foreground: 'hsl(210 20% 98%)',
+                            DEFAULT: 'hsl(213 85% 44%)',
+                            foreground: 'hsl(0 0% 100%)',
                         },
                     },
                 },
