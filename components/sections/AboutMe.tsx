@@ -46,8 +46,8 @@ const AboutMe = () => {
                             5개월동안 ReactJS를 중점으로 한 프론트엔드 교육 수료한 이후, OAuth를 이용한 소셜 로그인 기능을 직접 만들고 싶어 혼자서 Backend도 공부하는 시간을
                             가졌습니다. 그 결과로{' '}
                             <em className="bg-destructive/90 not-italic text-destructive-foreground">
-                                Express & MongoDB & AWS S3를 사용한 '채식 지도 웹앱'을 배포하기도 했습니다. DB & Storage & 컨테이너 기반 PaaS 서비스를 사용한 Backend 배포를 통해
-                                백엔드 - 프론트엔드 통신에 대해 전반적으로 이해
+                                Express & MongoDB & AWS S3를 사용한 &apos;채식 지도 웹앱&apos;을 배포하기도 했습니다. DB & Storage & 컨테이너 기반 PaaS 서비스를 사용한 Backend
+                                배포를 통해 백엔드 - 프론트엔드 통신에 대해 전반적으로 이해
                             </em>
                             할 수 있게 되었습니다! 이 프로젝트를 통해 배운 내용이 취업 후에도 백엔드 개발자와의 커뮤니케이션에 많은 도움이 되었습니다.
                         </p>
