@@ -16,7 +16,7 @@ const Intro = () => {
                         {careerTime} 차
                     </p>
                     <p className="text-4xl">
-                        프론트엔드 개발자 <span className="text-5xl font-bold inline-block md:inline">문희</span>
+                        프론트엔드 엔지니어 <span className="text-5xl font-bold inline-block md:inline">문희</span>
                         <span className="inline-block md:inline">입니다.</span>
                     </p>
                 </div>
