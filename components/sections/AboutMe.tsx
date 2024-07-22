@@ -65,7 +65,7 @@ const AboutMe = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="shrink-0 basis-80 self-center">
+                    <div className="shrink-0 basis-80 self-center grayscale-[50%]">
                         <NextImage src={profile} alt="Moon Hee" width={300} />
                     </div>
                 </div>
