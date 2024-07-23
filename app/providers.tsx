@@ -1,6 +1,7 @@
 'use client';
 
 import { ThemeProvider } from '@/components/theme-provider';
+import { ScrollProvider } from '@/contexts/scrollContext';
 import { NextUIProvider } from '@nextui-org/react';
 import { useEffect, useState } from 'react';
 
@@ -18,7 +19,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     return (
         <NextUIProvider>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-                {children}
+                <ScrollProvider>{children}</ScrollProvider>
             </ThemeProvider>
         </NextUIProvider>
     );

@@ -1,5 +1,6 @@
 'use client';
 
+import { useScroll } from '@/contexts/scrollContext';
 import { cn } from '@/lib/utils';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
@@ -12,10 +13,10 @@ import HeeLogo from './HeeLogo';
 import { Button } from './ui/button';
 
 const menus = [
-    { name: 'About', href: { hash: 'about' } },
-    { name: 'Experience', href: { hash: 'experience' } },
-    { name: 'Work', href: { hash: 'work' } },
-    { name: 'Contact', href: { hash: 'contact' } },
+    { name: 'About', href: { hash: '#about' } },
+    { name: 'Experience', href: { hash: '#experience' } },
+    { name: 'Work', href: { hash: '#work' } },
+    { name: 'Contact', href: { hash: '#contact' } },
 ];
 
 export default function StyledNavbar() {
@@ -78,11 +79,13 @@ const NavigationView = () => {
                 <Drawer.Overlay className="fixed inset-0 bg-black/40" />
                 <Drawer.Content className="flex flex-col rounded-t-[10px] h-full w-[300px] mt-24 fixed bottom-0 right-0 z-30">
                     <Drawer.Title className="sr-only">섹션 이동 메뉴</Drawer.Title>
-                    <div className="p-4 bg-secondary text-secondary-foreground flex-1 h-full">
-                        <div className="max-w-md mx-auto">
-                            <NavigationMenu direction="col" setSidebarOpen={setSidebarOpen} />
+                    <Drawer.Close asChild>
+                        <div className="p-4 bg-secondary text-secondary-foreground flex-1 h-full">
+                            <div className="max-w-md mx-auto">
+                                <NavigationMenu direction="col" setSidebarOpen={setSidebarOpen} />
+                            </div>
                         </div>
-                    </div>
+                    </Drawer.Close>
                 </Drawer.Content>
             </Drawer.Portal>
         </Drawer.Root>
@@ -91,31 +94,32 @@ const NavigationView = () => {
 
 const NavigationMenu = ({ direction, setSidebarOpen }: { direction: 'row' | 'col'; setSidebarOpen?: (args: boolean) => void }) => {
     const router = useRouter();
-    const [hash, setHash] = useHash();
+    // const [hash, setHash] = useHash();
+    const { setHash } = useScroll();
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, hashFromList: string) => {
-        e.preventDefault();
+        // e.preventDefault();
+        setHash(hashFromList);
         setSidebarOpen && setSidebarOpen(false);
-        const decoded = decodeURIComponent(encodeURIComponent(`#${hashFromList}`));
-        router.push(`/${decoded}`, { scroll: true });
-        setHash(`#${hashFromList}`);
-
+        // const decoded = decodeURIComponent(encodeURIComponent(`#${hashFromList}`));
+        // router.push(`/${decoded}`);
+        // setHash(`#${hashFromList}`);
         // const section = document.getElementById(hashFromList);
-
         // if (section) {
         //     section.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
         // }
     };
 
-    useEffect(() => {
-        if (hash) {
-            const section = document.querySelector(hash);
+    // useEffect(() => {
+    //     if (hash) {
+    //         router.push(`/${hash}`);
+    // const section = document.querySelector(hash);
 
-            if (section) {
-                section.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-            }
-        }
-    }, [hash]);
+    // if (section) {
+    //     section.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    // }
+    //     }
+    // }, [hash]);
 
     return (
         <nav>
@@ -126,7 +130,7 @@ const NavigationMenu = ({ direction, setSidebarOpen }: { direction: 'row' | 'col
                     const { name, href } = menu;
                     return (
                         <li key={name}>
-                            <Link href={href} onClick={(e) => handleClick(e, href.hash)}>
+                            <Link href={href.hash} onClick={(e) => handleClick(e, href.hash)} scroll={false}>
                                 <span className="mr-2 text-primary-foreground/50">{`${num}.`}</span>
                                 <span className="hover:underline">{name}</span>
                             </Link>
