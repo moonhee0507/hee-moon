@@ -1,9 +1,9 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, Dispatch, SetStateAction, useContext, useEffect, useState } from 'react';
 
-const ScrollContext = createContext<any>(null);
+const ScrollContext = createContext<null | { setHash: Dispatch<SetStateAction<string | null | undefined>> }>(null);
 
 export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
     const pathname = usePathname();

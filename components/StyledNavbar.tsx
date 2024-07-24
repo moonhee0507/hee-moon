@@ -4,7 +4,6 @@ import { useScroll } from '@/contexts/scrollContext';
 import { cn } from '@/lib/utils';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { useHash, useMedia } from 'react-use';
 import { Drawer } from 'vaul';
@@ -29,7 +28,6 @@ export default function StyledNavbar() {
         prevScrollPosRef.current = window.scrollY;
 
         const handleScroll = () => {
-            console.log('handleScroll called');
             const currentScrollPos = window.scrollY;
 
             if (navbarRef.current) {
@@ -93,33 +91,12 @@ const NavigationView = () => {
 };
 
 const NavigationMenu = ({ direction, setSidebarOpen }: { direction: 'row' | 'col'; setSidebarOpen?: (args: boolean) => void }) => {
-    const router = useRouter();
-    // const [hash, setHash] = useHash();
-    const { setHash } = useScroll();
+    const scroll = useScroll();
 
-    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, hashFromList: string) => {
-        // e.preventDefault();
-        setHash(hashFromList);
+    const handleClick = (hashFromList: string) => {
+        scroll?.setHash(hashFromList);
         setSidebarOpen && setSidebarOpen(false);
-        // const decoded = decodeURIComponent(encodeURIComponent(`#${hashFromList}`));
-        // router.push(`/${decoded}`);
-        // setHash(`#${hashFromList}`);
-        // const section = document.getElementById(hashFromList);
-        // if (section) {
-        //     section.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-        // }
     };
-
-    // useEffect(() => {
-    //     if (hash) {
-    //         router.push(`/${hash}`);
-    // const section = document.querySelector(hash);
-
-    // if (section) {
-    //     section.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-    // }
-    //     }
-    // }, [hash]);
 
     return (
         <nav>
@@ -130,7 +107,7 @@ const NavigationMenu = ({ direction, setSidebarOpen }: { direction: 'row' | 'col
                     const { name, href } = menu;
                     return (
                         <li key={name}>
-                            <Link href={href.hash} onClick={(e) => handleClick(e, href.hash)} scroll={false}>
+                            <Link href={href.hash} onClick={() => handleClick(href.hash)} scroll={false}>
                                 <span className="mr-2 text-primary-foreground/50">{`${num}.`}</span>
                                 <span className="hover:underline">{name}</span>
                             </Link>
