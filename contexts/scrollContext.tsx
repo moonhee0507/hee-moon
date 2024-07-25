@@ -1,30 +1,12 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
-import { createContext, Dispatch, SetStateAction, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
+import { useHash } from 'react-use';
 
-const ScrollContext = createContext<null | { setHash: Dispatch<SetStateAction<string | null | undefined>> }>(null);
+export const ScrollContext = createContext<null | { setHash: (newHash: string) => void }>(null);
 
 export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
-    const pathname = usePathname();
-    const [hash, setHash] = useState<string | null>();
-
-    useEffect(() => {
-        const handleHashChange = () => {
-            console.log('Hash changed: ', window.location.hash);
-
-            if (window.location.hash) {
-                setHash(window.location.hash);
-            } else {
-                setHash(null);
-            }
-        };
-
-        handleHashChange();
-        window.addEventListener('hashchange', handleHashChange);
-
-        return () => window.removeEventListener('hashchange', handleHashChange);
-    }, [pathname]);
+    const [hash, setHash] = useHash();
 
     useEffect(() => {
         if (hash) {
@@ -45,5 +27,3 @@ export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
 
     return <ScrollContext.Provider value={{ setHash }}>{children}</ScrollContext.Provider>;
 };
-
-export const useScroll = () => useContext(ScrollContext);

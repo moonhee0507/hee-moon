@@ -1,11 +1,11 @@
 'use client';
 
-import { useScroll } from '@/contexts/scrollContext';
+import { ScrollContext } from '@/contexts/scrollContext';
 import { cn } from '@/lib/utils';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
-import { useHash, useMedia } from 'react-use';
+import { useContext, useEffect, useRef, useState } from 'react';
+import { useMedia } from 'react-use';
 import { Drawer } from 'vaul';
 
 import HeeLogo from './HeeLogo';
@@ -19,8 +19,6 @@ const menus = [
 ];
 
 export default function StyledNavbar() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-
     const navbarRef = useRef<HTMLElement>(null);
     const prevScrollPosRef = useRef<number>(0);
 
@@ -67,7 +65,7 @@ const NavigationView = () => {
     }
 
     return (
-        <Drawer.Root direction="right" open={sidebarOpen} onOpenChange={setSidebarOpen} aria-describedby="클릭 시 해당 섹션으로 이동합니다.">
+        <Drawer.Root direction="right" open={sidebarOpen} onOpenChange={setSidebarOpen}>
             <Drawer.Trigger asChild>
                 <Button type="button" variant="ghost" className="h-8 border-none p-0">
                     <Menu size={20} />
@@ -77,6 +75,7 @@ const NavigationView = () => {
                 <Drawer.Overlay className="fixed inset-0 bg-black/40" />
                 <Drawer.Content className="flex flex-col rounded-t-[10px] h-full w-[300px] mt-24 fixed bottom-0 right-0 z-30">
                     <Drawer.Title className="sr-only">섹션 이동 메뉴</Drawer.Title>
+                    <Drawer.Description className="sr-only">클릭 시 해당 섹션으로 이동합니다.</Drawer.Description>
                     <Drawer.Close asChild>
                         <div className="p-4 bg-secondary text-secondary-foreground flex-1 h-full">
                             <div className="max-w-md mx-auto">
@@ -91,10 +90,11 @@ const NavigationView = () => {
 };
 
 const NavigationMenu = ({ direction, setSidebarOpen }: { direction: 'row' | 'col'; setSidebarOpen?: (args: boolean) => void }) => {
-    const scroll = useScroll();
+    // const scroll = useScroll();
+    const scrollContext = useContext(ScrollContext);
 
     const handleClick = (hashFromList: string) => {
-        scroll?.setHash(hashFromList);
+        scrollContext?.setHash(hashFromList);
         setSidebarOpen && setSidebarOpen(false);
     };
 
