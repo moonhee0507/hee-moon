@@ -19,9 +19,9 @@ const ColorModeButton = () => {
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setTheme('light')}>라이트</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme('dark')}>다크</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme('system')}>시스템</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme('light')}>밝게</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme('dark')}>어둡게</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme('system')}>시스템 설정</DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
     );

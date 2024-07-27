@@ -60,4 +60,7 @@
         @apply fixed left-0 right-0 top-0 z-50 h-1 bg-destructive;
         transform-origin: 0%;
     }
+    code {
+        @apply rounded-sm border-2 border-border bg-muted px-1 text-muted-foreground;
+    }
 }
