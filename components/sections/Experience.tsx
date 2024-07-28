@@ -223,7 +223,6 @@ const Experience = () => {
                                 </CardBody>
                             </Card>
                         </Tab>
-                        <Tab key="thereIsNotASecondCompany" title="두번째 회사는 아직 없어요!"></Tab>
                     </Tabs>
                 </div>
             </div>

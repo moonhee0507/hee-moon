@@ -57,7 +57,7 @@
         letter-spacing: -0.03rem;
     }
     .progress-bar {
-        @apply fixed left-0 right-0 top-0 z-50 h-1 bg-destructive;
+        @apply fixed left-0 right-0 top-0 z-50 h-1 bg-primary;
         transform-origin: 0%;
     }
     code {

@@ -1,10 +1,11 @@
 'use client';
 
 import imgGreenMapsLogo from '@/public/green_maps_logo.png';
-import { Card, CardBody, CardHeader, Image, Tab, Tabs } from '@nextui-org/react';
+import { Card, Image } from '@nextui-org/react';
 import NextImage from 'next/image';
 import Link from 'next/link';
 
+import Github from '../icons/Github';
 import StyledTitle from '../StyledTitle';
 
 const Work = () => {
@@ -35,13 +36,7 @@ const Work = () => {
                                 <div className="flex gap-2">
                                     <Link href="https://github.com/moonhee0507/green-maps" target="_blank">
                                         <div className="overflow-hidden rounded-full">
-                                            <NextImage
-                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
-                                                alt="Github"
-                                                width={50}
-                                                height={50}
-                                                className="bg-white"
-                                            />
+                                            <Github size={{ width: 50, height: 50 }} />
                                             <span className="sr-only">깃허브 링크</span>
                                         </div>
                                     </Link>

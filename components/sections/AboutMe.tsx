@@ -43,7 +43,7 @@ const AboutMe = () => {
                         </p>
                         <p>
                             5개월간 Front-end 교육을 수료한 이후, OAuth를 활용한 소셜 로그인 기능과 필요한 API를 직접 개발하고 싶어 Back-end 영역에도 관심이 생겼습니다. 그 결과{' '}
-                            <em className="bg-destructive/90 not-italic text-destructive-foreground">
+                            <em className="not-italic text-secondary">
                                 MongoDB & Express & ReactJS & NodeJS(MERN Stack)과 AWS S3를 사용한 &apos;채식 지도 웹앱&apos;을 배포하기도 했습니다. DB & Storage & 컨테이너 기반
                                 PaaS 서비스를 사용하여 Back-end 배포를 통해 Back-end - Front-end 통신에 대해 전반적으로 이해
                             </em>
@@ -51,8 +51,8 @@ const AboutMe = () => {
                         </p>
                         <p>
                             2023년 7월부터 한 블록체인 회사의 Front-end 엔지니어로 일을 시작했습니다. 요즘 저의 관심사는{' '}
-                            <em className="bg-destructive/90 not-italic text-destructive-foreground">테이블 UI의 편의성 개선</em>입니다. 테이블 헤더에서 필터링과 정렬 기능을
-                            사용자가 편리하게 사용할 수 있도록 고민하고 있습니다.
+                            <em className="not-italic text-secondary">테이블 UI의 편의성 개선</em>입니다. 테이블 헤더에서 필터링과 정렬 기능을 사용자가 편리하게 사용할 수 있도록
+                            고민하고 있습니다.
                         </p>
                         <p>최근에 제가 사용해본 몇 가지 기술은 다음과 같습니다:</p>
                         <div>
