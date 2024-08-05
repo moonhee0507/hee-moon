@@ -10,7 +10,7 @@ const Experience = () => {
             <div className="flex flex-col gap-12">
                 <StyledTitle id="experience" title="02. Where I've Worked" />
                 <div>
-                    <Tabs aria-label="Where I've worked" size="lg" color="primary" variant="light" placement="top" disabledKeys={['thereIsNotASecondCompany']}>
+                    <Tabs aria-label="Where I've worked" size="lg" color="default" variant="light" placement="top" className="z-10" disabledKeys={['thereIsNotASecondCompany']}>
                         <Tab key="bSquareLab" title="B-square Lab">
                             <Card className="p-4" isBlurred>
                                 <CardBody>

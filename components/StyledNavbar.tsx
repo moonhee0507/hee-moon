@@ -10,6 +10,7 @@ import { Drawer } from 'vaul';
 import HeeLogo from './HeeLogo';
 import Github from './icons/Github';
 import Linkedin from './icons/Linkedin';
+import Velog from './icons/Velog';
 import X from './icons/X';
 import { Button } from './ui/button';
 
@@ -63,7 +64,7 @@ const NavigationView = () => {
     const isMedium = useMedia('(min-width: 768px)', true);
 
     if (isMedium) {
-        return <NavigationMenu />;
+        return <NavigationMenu isMedium={true} />;
     }
 
     return (
@@ -80,13 +81,18 @@ const NavigationView = () => {
                     <Drawer.Description className="sr-only">클릭 시 해당 섹션으로 이동합니다.</Drawer.Description>
                     <div className="p-4 bg-background text-foreground flex-1 h-full flex flex-col justify-center gap-10">
                         <div className="max-w-md mx-auto">
-                            <NavigationMenu setSidebarOpen={setSidebarOpen} />
+                            <NavigationMenu setSidebarOpen={setSidebarOpen} isMedium={false} />
                         </div>
                         <div>
                             <ul className="flex justify-center gap-4 items-center">
                                 <li>
                                     <Link href="https://github.com/moonhee0507" target="_blank">
                                         <Github size={{ width: 45, height: 45 }} />
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="https://velog.io/@sjmh0507" target="_blank">
+                                        <Velog size={{ width: 45, height: 45 }} />
                                     </Link>
                                 </li>
                                 <li>
@@ -108,8 +114,8 @@ const NavigationView = () => {
     );
 };
 
-const NavigationMenu = ({ setSidebarOpen }: { setSidebarOpen?: (args: boolean) => void }) => {
-    const isMedium = useMedia('(min-width: 768px)', true);
+const NavigationMenu = ({ setSidebarOpen, isMedium }: { setSidebarOpen?: (args: boolean) => void; isMedium: boolean }) => {
+    // const isMedium = useMedia('(min-width: 768px)', true);
     const scrollContext = useContext(ScrollContext);
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, hashFromList: string) => {
