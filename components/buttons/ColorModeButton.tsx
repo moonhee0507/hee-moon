@@ -10,7 +10,7 @@ const ColorModeButton = () => {
     const { setTheme } = useTheme();
 
     return (
-        <DropdownMenu>
+        <DropdownMenu modal={false}>
             <DropdownMenuTrigger asChild>
                 <Button size="icon" className="rounded-full shadow-lg">
                     <Sun size={22} className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
